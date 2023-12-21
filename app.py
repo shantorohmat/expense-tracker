@@ -3,6 +3,7 @@ from PIL import Image
 from utility import login
 from src.db_connection import get_database_connection
 from src.expense_op import save_expense
+from src.expense_op import insert_parameter
 
 # Load images
 logo_image = Image.open("img/company_logo.png")
@@ -55,7 +56,8 @@ def menu():
              pass
             # reporting()
         elif task == 'Parameter Insertion':
-             pass
+            cursor, db = get_database_connection()
+            insert_parameter(cursor, db)
             # parameter_listing()
 
 

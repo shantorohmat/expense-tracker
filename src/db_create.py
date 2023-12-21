@@ -23,6 +23,8 @@ cursor, db = get_database_connection()
 #                                         updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP 
 #                                                     ON UPDATE CURRENT_TIMESTAMP)
 #                 ''')
+# cursor.execute( '''ALTER TABLE expense
+#                  ADD COLUMN expense_reason VARCHAR(20) NOT NULL AFTER document''' )
 
 cursor.execute("show tables from ExpenseDB")
 tables = cursor.fetchall()
